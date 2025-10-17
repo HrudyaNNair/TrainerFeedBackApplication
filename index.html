@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Feedback System</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="main">
+        <button class="logoutBtn" id="logoutBtn">Log out</button>
+        <div id="container" class="container">
+            <h1>Feedback Report Generator</h1>
+            <!-- Upload Excel -->
+
+            <div class="form-group" id="uploadSection">
+                <label for="fileInput">Upload Excel File</label>
+                <input type="file" id="fileInput" name="fileInput" accept=".xlsx,.xls">
+                <button class="secondary-btn" id="uploadBtn">Upload</button>
+
+            </div>
+            <div class="inputFields" id="inputFields">
+            <div class="reportHeader" id="reportHeader" style="display:none;" >
+                <label for="year">Batch:</label>
+                <input type="text" id="batch" placeholder="Enter ILP batch name">
+                <label for="reportname">Report Name:</label>
+                <input type="text" id="reportName" placeholder="Enter Report name">
+
+            </div>
+            
+
+            <!-- Single trainer text input -->
+            <div id="singleTrainerDiv" style="display:none;">
+                <label for="trainerName">Trainer Name:</label>
+                <input type="text" id="trainerName" placeholder="Enter Trainer Name">
+                <button class="primary-btn" id="generateBtn">Generate Report</button>
+
+
+            </div>
+
+            <!-- Multiple trainers dropdown -->
+            <div id="trainerDropdownField" style="display:none;">
+                <label for="trainerDropdown">Select Trainer:</label>
+                <select id="trainerDropdown"></select>
+                <button class="primary-btn" id="generateBtnMulti">Generate Report</button>
+
+            </div>
+            </div>
+            <p id="errorMsg" style="color: red; font-weight: lighter;"></p>
+
+             
+
+             
+            <button id="backBtn" class="secondary-btn" >Back</button>
+
+ 
+        </div>
+
+        <div id="pdfPreviewContainer"></div>
+    </div>
+
+    <!-- Firebase SDKs-->
+    <!-- <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script> -->
+    <!-- Firebase App (core SDK) -->
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<!-- Firebase Realtime Database -->
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+
+
+     
+
+    <!-- SheetJS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+
+    <!-- jsPDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
