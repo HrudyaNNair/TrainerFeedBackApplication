@@ -3,7 +3,6 @@ import { login } from '../Page-Object/login';
 
 test.beforeEach(async ({ page }) => {
     await page.goto('http://127.0.0.1:5503/login.html')
-    // const loginWith = new login(page);
 });
 test('login with valid credentials',async({page})=>{
     const loginWith = new login(page);

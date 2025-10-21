@@ -26,6 +26,7 @@ test('TC-LOGIN-016: Test Login',async ({ page }) => {
         await page.getByPlaceholder('Email').first().fill("hrudyannair@gmail.com")
         await page.getByPlaceholder('Password').first().fill("Hrudya@2001")
         await page.getByRole('button', { name: "Login" }).click();
+        await expect(page).toHaveURL('http://127.0.0.1:5503/index.html');
     })
 test('TC-LOGIN-017: Test Login with wrong email',async ({ page }) => {
         await page.getByPlaceholder('Email').first().fill("wronguser@gmail.com")
